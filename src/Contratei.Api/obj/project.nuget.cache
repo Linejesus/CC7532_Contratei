@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "/obt9KrPu64=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Aline Rocha\\Documents\\projeto_contratei\\Contratei\\src\\Contratei.Api\\Contratei.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\google.apis\\1.77.0\\google.apis.1.77.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\google.apis.auth\\1.77.0\\google.apis.auth.1.77.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\google.apis.calendar.v3\\1.77.0.4285\\google.apis.calendar.v3.1.77.0.4285.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\google.apis.core\\1.77.0\\google.apis.core.1.77.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\npgsql\\9.0.5\\npgsql.9.0.5.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\swashbuckle.aspnetcore\\10.3.0\\swashbuckle.aspnetcore.10.3.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.3.0\\swashbuckle.aspnetcore.swagger.10.3.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.3.0\\swashbuckle.aspnetcore.swaggergen.10.3.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.3.0\\swashbuckle.aspnetcore.swaggerui.10.3.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\Aline Rocha\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
