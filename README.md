@@ -301,6 +301,244 @@ Os testes verificam tanto o comportamento individual das operações quanto a in
 
 ---
 
+## 8. Vídeo de Demonstração
+
+https://youtu.be/BadytxM8Oh4
+
+---
+
+## 9. Especificação de Componentes
+
+### 1. Componente `ProfissionalComponente`
+
+#### 1.1. Nome
+
+`ProfissionalComponente`
+
+#### 1.2. Responsabilidade
+
+Gerenciar e disponibilizar informações dos profissionais cadastrados na plataforma **Contratei**, permitindo consultar seus dados e verificar os horários disponíveis para a realização de serviços.
+
+O componente é responsável por fornecer as informações necessárias para que outros componentes possam consultar profissionais e verificar sua disponibilidade antes de realizar um agendamento.
+
+#### 1.3. Operações
+
+| Operação | Descrição |
+|---|---|
+| `consultarProfissional()` | Consulta os dados de um profissional a partir de seu identificador. |
+| `exibirProfissionais()` | Retorna os profissionais cadastrados na plataforma. |
+| `filtrarProfissionais()` | Pesquisa profissionais conforme os filtros informados, como área de atuação e localização. |
+| `consultarDisponibilidade()` | Consulta os horários disponíveis de um profissional para uma data e duração informadas. |
+
+#### 1.4. Interfaces Fornecidas
+
+**Interface:** `IProfissional`
+
+| Operação | Descrição |
+|---|---|
+| `consultarProfissional(id)` | Retorna os dados do profissional identificado pelo ID. |
+| `exibirProfissionais()` | Retorna a lista de profissionais cadastrados. |
+| `filtrarProfissionais(filtros)` | Retorna profissionais compatíveis com os filtros de pesquisa. |
+| `consultarDisponibilidade(profissionalId, data, duracaoMinutos)` | Retorna os horários disponíveis do profissional para a data e duração informadas. |
+
+#### 1.5. Interfaces Requeridas
+
+Não possui interfaces requeridas.
+
+#### 1.6. Contratos
+
+##### 1.6.1. Operação `consultarProfissional(id)`
+
+**Entradas**
+
+| Parâmetro | Tipo | Descrição |
+|---|---|---|
+| `id` | `Guid` | Identificador único do profissional. |
+
+**Saída**
+
+Dados do profissional, incluindo:
+
+- Identificador;
+- Nome;
+- Descrição;
+- Área de atuação;
+- Informações de endereço.
+
+**Pré-condições**
+
+- O identificador deve ser um GUID válido.
+- A consulta deve ser realizada por meio da interface disponibilizada pelo componente.
+
+**Pós-condições**
+
+- Os dados do profissional são retornados.
+
+##### 1.6.2. Operação `consultarDisponibilidade(profissionalId, data, duracaoMinutos)`
+
+**Entradas**
+
+| Parâmetro | Tipo | Descrição |
+|---|---|---|
+| `profissionalId` | `Guid` | Identificador do profissional. |
+| `data` | `DateOnly` | Data da consulta. |
+| `duracaoMinutos` | `int` | Duração desejada para o serviço, em minutos. |
+
+**Saída**
+
+Lista de horários disponíveis compatíveis com a data e a duração informadas.
+
+**Pré-condições**
+
+- O identificador do profissional deve ser válido.
+- A data deve ser válida.
+- A duração deve ser um valor positivo.
+- O profissional deve existir no sistema.
+
+**Pós-condições**
+
+- São retornados os horários considerados disponíveis, segundo as regras de disponibilidade e os agendamentos existentes.
+
+---
+
+### 2. Componente `AgendamentoComponente`
+
+#### 2.1. Nome
+
+`AgendamentoComponente`
+
+#### 2.2. Responsabilidade
+
+Gerenciar os agendamentos realizados na plataforma **Contratei**, incluindo criação, consulta e cancelamento.
+
+O componente deve verificar se o contratante e o profissional existem e consultar a disponibilidade do profissional antes de confirmar um novo agendamento.
+
+Também deve impedir a criação de agendamentos em horários incompatíveis com as regras de disponibilidade e com os agendamentos já registrados.
+
+#### 2.3. Operações
+
+| Operação | Descrição |
+|---|---|
+| `criarAgendamento()` | Valida os dados, verifica a disponibilidade e registra um novo agendamento. |
+| `exibirAgendamentos()` | Retorna os agendamentos associados a um contratante ou profissional. |
+| `consultarAgendamento()` | Consulta um agendamento pelo identificador. |
+| `cancelarAgendamento()` | Cancela um agendamento existente, respeitando as regras de negócio. |
+
+#### 2.4. Interfaces Fornecidas
+
+**Interface:** `IAgendamento`
+
+| Operação | Descrição |
+|---|---|
+| `criarAgendamento(dados)` | Cria um agendamento após validar os dados e a disponibilidade. |
+| `consultarAgendamento(appointmentId)` | Recupera um agendamento pelo identificador. |
+| `exibirAgendamentos(identificador, tipo)` | Retorna os agendamentos de um contratante ou profissional. |
+| `cancelarAgendamento(appointmentId)` | Cancela um agendamento existente. |
+
+#### 2.5. Interfaces Requeridas
+
+| Interface | Operação | Finalidade |
+|---|---|---|
+| `IProfissional` | `consultarProfissional(profissionalId)` | Verifica se o profissional existe e obtém seus dados básicos. |
+| `IProfissional` | `consultarDisponibilidade(profissionalId, data, duracaoMinutos)` | Verifica se o horário solicitado está entre os horários disponíveis. |
+| `IContratante` | `validarUsuario(contratanteId)` | Verifica a existência e a validade do contratante. |
+
+#### 2.6. Contratos
+
+##### 2.6.1. Operação `criarAgendamento(dados)`
+
+**Entradas**
+
+| Parâmetro | Tipo | Descrição |
+|---|---|---|
+| `contractorId` | `Guid` | Identificador do contratante. |
+| `professionalId` | `Guid` | Identificador do profissional. |
+| Data e horário de início | `DateTimeOffset` | Data e horário de início do agendamento. |
+| Duração do serviço | Numérico inteiro | Duração necessária para determinar o horário de término, quando aplicável. |
+
+**Saída**
+
+Agendamento criado, contendo:
+
+- Identificador;
+- Contratante;
+- Profissional;
+- Data;
+- Horário;
+- Estado inicial.
+
+**Pré-condições**
+
+- Os identificadores do contratante e do profissional devem ser válidos.
+- O contratante deve existir e estar apto a realizar o agendamento.
+- O profissional deve existir.
+- A data e os horários devem ser válidos.
+- A duração deve ser positiva.
+- O horário solicitado deve estar disponível para o profissional.
+- Não deve existir outro agendamento incompatível com o horário solicitado.
+
+**Pós-condições**
+
+- O agendamento é persistido e recebe um identificador único.
+- O agendamento fica associado ao contratante e ao profissional informados.
+
+##### 2.6.2. Operação `cancelarAgendamento(appointmentId)`
+
+**Entradas**
+
+| Parâmetro | Tipo | Descrição |
+|---|---|---|
+| `appointmentId` | `Guid` | Identificador do agendamento. |
+
+**Saída**
+
+Confirmação do cancelamento.
+
+**Pré-condições**
+
+- O identificador deve ser válido.
+- O agendamento deve existir.
+- O estado atual deve permitir o cancelamento.
+
+**Pós-condições**
+
+- O estado do agendamento é atualizado para cancelado.
+
+##### 2.6.3. Operação `exibirAgendamentos(identificador, tipo)`
+
+**Entradas**
+
+| Parâmetro | Tipo | Descrição |
+|---|---|---|
+| `identificador` | `Guid` | Identificador do contratante ou do profissional. |
+| `tipo` | `String` | Tipo de consulta: `contratante` ou `profissional`. |
+
+**Saída**
+
+Lista de agendamentos associados ao identificador informado.
+
+**Pré-condições**
+
+- O identificador deve ser válido.
+- O tipo de consulta deve ser reconhecido pela operação.
+
+**Pós-condições**
+
+- A lista retornada contém somente os agendamentos associados ao identificador informado.
+
+---
+
+### 3. Resumo das Interfaces
+
+| Componente | Interface | Tipo | Finalidade |
+|---|---|---|---|
+| `ProfissionalComponente` | `IProfissional` | Fornecida | Disponibilizar dados dos profissionais, filtros de pesquisa e informações de disponibilidade. |
+| `AgendamentoComponente` | `IAgendamento` | Fornecida | Disponibilizar operações de criação, consulta, listagem e cancelamento de agendamentos. |
+| `AgendamentoComponente` | `IProfissional` | Requerida | Consultar profissionais e verificar seus horários disponíveis. |
+| `AgendamentoComponente` | `IContratante` | Requerida | Validar a existência e a situação do contratante. |
+
+---
+
 ### Integrantes
 
 |       Integrante         |       RA       |             
