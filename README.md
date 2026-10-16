@@ -221,6 +221,84 @@ A interface permite consultar os endpoints disponíveis, informar parâmetros, e
 
 Os testes verificam tanto o comportamento individual das operações quanto a integração entre os componentes.
 
+<img width="905" height="872" alt="image" src="https://github.com/user-attachments/assets/7aff50b7-44d5-44b0-a2b9-a20f557173c7" />
+
+<br>
+
+<img width="945" height="677" alt="image" src="https://github.com/user-attachments/assets/ea614a59-2cf6-487e-9e0d-2e531a80ee47" />
+
+<br>
+
+<img width="922" height="765" alt="image" src="https://github.com/user-attachments/assets/6e4699fc-61a7-4fdc-a02a-6962c59a2801" />
+
+<br>
+
+<img width="917" height="866" alt="image" src="https://github.com/user-attachments/assets/51d700d8-2f0f-490e-b090-5d7e576bbf16" />
+
+<br>
+
+<img width="906" height="867" alt="image" src="https://github.com/user-attachments/assets/3a9b38bd-ceb1-41a1-b542-0fb4acfc2e05" />
+
+<br>
+
+<img width="917" height="840" alt="image" src="https://github.com/user-attachments/assets/02f16416-e1f4-4fc4-9989-10d10303837c" />
+
+<br>
+
+<img width="995" height="842" alt="image" src="https://github.com/user-attachments/assets/72435e03-53cc-4843-b982-34b0a2b1d78d" />
+
+<br>
+
+<img width="1025" height="857" alt="image" src="https://github.com/user-attachments/assets/a8112265-aa5c-40b4-be2f-77c2e42c9a57" />
+
+<br>
+
+<img width="1127" height="857" alt="image" src="https://github.com/user-attachments/assets/6afa5333-075e-4619-b6ba-84407f8cd764" />
+
+<br>
+
+<img width="1112" height="861" alt="image" src="https://github.com/user-attachments/assets/49d0219a-a9de-4b3c-b3b2-086bb0f16252" />
+
+<br>
+
+<img width="1165" height="832" alt="image" src="https://github.com/user-attachments/assets/2ca12f56-5bb0-4056-88b2-05eabffd90dc" />
+
+<br>
+
+<img width="947" height="852" alt="image" src="https://github.com/user-attachments/assets/46d4a2f5-3705-4660-9b12-c8575d176808" />
+
+<br>
+
+<img width="1215" height="865" alt="image" src="https://github.com/user-attachments/assets/dcaec1e6-9309-49cb-9bcd-feb2c27e92ca" />
+
+<br>
+
+<img width="1242" height="855" alt="image" src="https://github.com/user-attachments/assets/02223c54-85dc-4159-8c41-01b32998acb4" />
+
+<br>
+
+<img width="1067" height="857" alt="image" src="https://github.com/user-attachments/assets/6a57df64-9d31-498b-b438-9b29f8ef3ae7" />
+
+<br>
+
+<img width="1150" height="820" alt="image" src="https://github.com/user-attachments/assets/70bd354f-d752-46a3-8967-f24ddc5af94a" />
+
+<br>
+
+<img width="1072" height="857" alt="image" src="https://github.com/user-attachments/assets/ae323ea4-a194-4cd0-a2c7-5dbfb2d08a95" />
+
+<br>
+
+<img width="1085" height="856" alt="image" src="https://github.com/user-attachments/assets/3e758fa1-0ab8-4491-a25e-ba3be7eaa8a7" />
+
+<br>
+
+<img width="1077" height="750" alt="image" src="https://github.com/user-attachments/assets/824837a4-dcbe-451e-9203-f4a182ea576c" />
+
+<br>
+
+<img width="1182" height="851" alt="image" src="https://github.com/user-attachments/assets/95168152-7be1-41cf-a5cd-344ade4aa3ee" />
+
 ---
 
 ### Integrantes
